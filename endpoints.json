@@ -1,0 +1,150 @@
+{
+    "GET /api": {
+        "description": "serves up a json representation of all the available endpoints of the api"
+    },
+    "GET /api/shipments": {
+        "description": "serves an array of all shipments",
+        "queries": [],
+        "exampleResponse": {
+            "shipments": [
+                {
+                    "weight": 1,
+                    "method": "International",
+                    "sender_details": "Barry David, London",
+                    "receipt_details": "Samantha Jones, New York",
+                    "shipment_date": "2023-03-16",
+                    "cost": 5.59
+                }
+            ]
+        }
+    },
+    "POST /api/shipments": {
+        "description": "serves up a new object which consists of the posted shipment, sender and receiver",
+        "queries": [],
+        "Request Body Guide": {
+            "format": "an object containing the correct body information.",
+            "example": {
+                "shipment": {
+                    "weight": 1,
+                    "method": "International",
+                    "sender_details": "Barry David, London",
+                    "receipt_details": "Samantha Jones, New York",
+                    "shipment_date": "2023-03-16",
+                    "cost": 5.59
+                },
+                "sender": {
+                    "first_name": "Barry",
+                    "last_name": "David",
+                    "email_address": "barry_david@hotmail.com",
+                    "address_line_1": "15 Craigswell Street",
+                    "address_line_2": null,
+                    "city": "London",
+                    "country": "United Kingdom",
+                    "post_code": "LE1 2B4"
+                },
+                "receiver": {
+                    "first_name": "Samantha",
+                    "last_name": "Jones",
+                    "email_address": "samantha_jones@hotmail.com",
+                    "address_line_1": "15 News Street",
+                    "address_line_2": null,
+                    "city": "New York",
+                    "country": "United States",
+                    "post_code": "61005"
+                }
+            }
+        },
+        "exampleResponse": {
+            "shipment": {
+                "shipment_id": 5,
+                "weight": "1",
+                "method": "International",
+                "sender_details": "Barry David, London",
+                "receipt_details": "Samantha Jones, New York",
+                "cost": "5.59",
+                "shipment_date": "2023-03-16"
+            },
+            "sender": {
+                "sender_id": 5,
+                "shipment_id": 5,
+                "first_name": "Barry",
+                "last_name": "David",
+                "email_address": "barry_david@hotmail.com",
+                "address_line_1": "15 Craigswell Street",
+                "address_line_2": null,
+                "city": "London",
+                "country": "United Kingdom",
+                "post_code": "LE1 2B4"
+            },
+            "receiver": {
+                "receiver_id": 5,
+                "shipment_id": 5,
+                "first_name": "Samantha",
+                "last_name": "Jones",
+                "email_address": "samantha_jones@hotmail.com",
+                "address_line_1": "15 News Street",
+                "address_line_2": null,
+                "city": "New York",
+                "country": "United States",
+                "post_code": "61005"
+            }
+        }
+    },
+    "GET /api/shipments/:shipment_id": {
+        "description": "serves a single shipment by shipment_id",
+        "queries": [],
+        "exampleResponse": {
+            "shipment": [
+                {
+                    "shipment_id": 5,
+                    "weight": "1",
+                    "method": "International",
+                    "sender_details": "Barry David, London",
+                    "receipt_details": "Samantha Jones, New York",
+                    "cost": "5.59",
+                    "shipment_date": "2023-03-16"
+                }
+            ]
+        }
+    },
+    "GET /api/shipments/:shipment_id/sender": {
+        "description": "serves a single sender by shipment_id",
+        "queries": [],
+        "exampleResponse": {
+            "sender": [
+                {
+                    "sender_id": 5,
+                    "shipment_id": 5,
+                    "first_name": "Barry",
+                    "last_name": "David",
+                    "email_address": "barry_david@hotmail.com",
+                    "address_line_1": "15 Craigswell Street",
+                    "address_line_2": null,
+                    "city": "London",
+                    "country": "United Kingdom",
+                    "post_code": "LE1 2B4"
+                }
+            ]
+        }
+    },
+    "GET /api/shipments/:shipment_id/receiver": {
+        "description": "serves a single receiver by shipment_id",
+        "queries": [],
+        "exampleResponse": {
+            "receiver": [
+                {
+                    "receiver_id": 5,
+                    "shipment_id": 5,
+                    "first_name": "Samantha",
+                    "last_name": "Jones",
+                    "email_address": "samantha_jones@hotmail.com",
+                    "address_line_1": "15 News Street",
+                    "address_line_2": null,
+                    "city": "New York",
+                    "country": "United States",
+                    "post_code": "61005"
+                }
+            ]
+        }
+    }
+}
