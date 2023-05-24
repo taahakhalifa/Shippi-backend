@@ -1,0 +1,48 @@
+const sendersData = [
+    {
+        shipment_id: 1,
+        first_name: "Jane",
+        last_name: "Smith",
+        email_address: "jane_smith@hotmail.com",
+        address_line_1: "15 Downtown Street",
+        address_line_2: null,
+        city: "New York",
+        country: "United States",
+        post_code: "61006",
+    },
+    {
+        shipment_id: 2,
+        first_name: "Bob",
+        last_name: "Johnson",
+        email_address: "bob_johnson@hotmail.com",
+        address_line_1: "15 Ellay Street",
+        address_line_2: null,
+        city: "Los Angeles",
+        country: "United States",
+        post_code: "74114",
+    },
+    {
+        shipment_id: 3,
+        first_name: "Lucy",
+        last_name: "Pelt",
+        email_address: "lucy_pelt@hotmail.com",
+        address_line_1: "15 Elizabeth Street",
+        address_line_2: null,
+        city: "Belfast",
+        country: "Northern Ireland",
+        post_code: "BT1 1AA",
+    },
+    {
+        shipment_id: 4,
+        first_name: "Emperor",
+        last_name: "Zurg",
+        email_address: "emperor_zurg@hotmail.com",
+        address_line_1: "15 Genzee Street",
+        address_line_2: null,
+        city: "Planet Z",
+        country: "Space",
+        post_code: "3C4P5",
+    },
+];
+
+module.exports = sendersData;
